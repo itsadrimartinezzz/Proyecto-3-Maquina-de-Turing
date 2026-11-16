@@ -1,0 +1,75 @@
+# Add one while keeping leading zeros
+q_states:
+  q_list:
+  - q0
+  - q1
+  - q2
+  initial: q0
+  final: q2
+alphabet:
+- '0'
+- '1'
+tape_alphabet:
+- '0'
+- '1'
+- null
+delta:
+- params:
+    initial_state: q0
+    mem_cache_value: null
+    tape_input: '0'
+  output:
+    final_state: q0
+    mem_cache_value: null
+    tape_output: '0'
+    tape_displacement: R
+- params:
+    initial_state: q0
+    mem_cache_value: null
+    tape_input: '1'
+  output:
+    final_state: q0
+    mem_cache_value: null
+    tape_output: '1'
+    tape_displacement: R
+- params:
+    initial_state: q0
+    mem_cache_value: null
+    tape_input: null
+  output:
+    final_state: q1
+    mem_cache_value: null
+    tape_output: null
+    tape_displacement: L
+- params:
+    initial_state: q1
+    mem_cache_value: null
+    tape_input: '1'
+  output:
+    final_state: q1
+    mem_cache_value: null
+    tape_output: '0'
+    tape_displacement: L
+- params:
+    initial_state: q1
+    mem_cache_value: null
+    tape_input: '0'
+  output:
+    final_state: q2
+    mem_cache_value: null
+    tape_output: '1'
+    tape_displacement: S
+- params:
+    initial_state: q1
+    mem_cache_value: null
+    tape_input: null
+  output:
+    final_state: q2
+    mem_cache_value: null
+    tape_output: '1'
+    tape_displacement: S
+simulation_strings:
+- '00101'
+- '01011'
+- '10111'
+- '11111'
