@@ -1,4 +1,4 @@
-# Proyecto 3 - Simulador de Máquinas de Turing
+# Proyecto 3 Máquina de Turing
 
 En este proyecto hicimos un simulador de máquinas de Turing deterministas de una sola cinta. La idea es poder cargar una máquina, ingresar una cadena y ver cómo se ejecuta paso a paso hasta que se acepte, se rechace o llegue al límite de pasos.
 
