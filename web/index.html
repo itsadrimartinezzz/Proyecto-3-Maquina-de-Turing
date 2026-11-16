@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05070b">
+  <meta name="color-scheme" content="dark">
+  <title>Proyecto 3</title>
+  <link rel="stylesheet" href="/estilos.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <section class="intro">
+      <h1>Máquina de Turing</h1>
+      <div class="intro-actions">
+        <button id="upload-button" class="button outline">Subir archivo YAML</button>
+        <input id="file" type="file" accept=".yaml,.yml" hidden>
+        <div class="machine-picker">
+          <button class="machine-option selected" data-example="reconocedora"><strong>Reconocedora</strong></button>
+          <button class="machine-option" data-example="alteradora"><strong>Alteradora</strong></button>
+        </div>
+      </div>
+    </section>
+
+    <div id="error" class="error" role="alert" hidden></div>
+    <form id="input-form" class="input-bar">
+      <label for="input">Cadena de entrada</label>
+      <div class="input-field">
+        <input id="input" type="text" autocomplete="off" spellcheck="false" aria-describedby="input-help">
+        <button class="button dark" type="submit">Preparar</button>
+      </div>
+      <span id="input-help" class="input-help">Ejemplos:</span>
+      <div id="samples" class="samples"></div>
+    </form>
+
+    <section class="workspace" aria-label="Simulación de la máquina">
+      <div class="stage-heading">
+        <h2 id="machine-title">w#wᴿ#w</h2>
+        <span id="status" class="status">Lista</span>
+      </div>
+      <div id="state-list" class="state-list" aria-label="Estados de la máquina"></div>
+      <div class="tape-stage">
+        <div class="state-orbit"><span class="orbit-label">Estado</span><div id="state-node" class="state-node" aria-live="polite">q0</div><span id="memory" class="memory">memoria: B</span></div>
+        <div class="tape-view"><div id="tape" class="tape" aria-label="Cinta y posición del cabezal"></div><p class="tape-caption">B celda vacía <span>·</span> el indicador señala la lectura actual</p></div>
+      </div>
+      <div class="reading"><span class="reading-label">Transición aplicada</span><code id="transition">Todavía no se ha aplicado ninguna transición.</code></div>
+      <div class="transport">
+        <div class="playback"><button id="play" class="button dark">▶ <span>Reproducir</span></button><button id="step" class="button outline">Un paso →</button><button id="reset" class="icon-button" title="Reiniciar" aria-label="Reiniciar">↺</button></div>
+        <label class="speed">Intervalo <input id="speed" type="range" min="50" max="800" value="260" step="10"><output id="speed-value">260 ms</output></label>
+        <span class="step-counter"><b id="steps">0</b> pasos <span>·</span> posición <b id="position">0</b></span>
+      </div>
+      <div id="result" class="result" aria-live="polite" hidden><span id="result-title"></span><code id="result-output"></code></div>
+    </section>
+
+    <section class="records">
+      <div class="panel history-panel"><div class="panel-heading"><h2>Historial de pasos</h2><button id="export" class="text-button">Descargar .txt</button></div>
+        <div id="history" class="history" tabindex="0" aria-label="Descripciones instantáneas completas"></div>
+      </div>
+      <aside class="panel definition-panel"><h2>Definición de la máquina</h2><p id="machine-description" class="machine-description"></p><dl id="definition"></dl><button id="batch" class="button dark">Simular todas las cadenas</button><details><summary>Ver transiciones</summary><div id="rules" class="rules"></div></details></aside>
+    </section>
+  </main>
+</body>
+</html>
