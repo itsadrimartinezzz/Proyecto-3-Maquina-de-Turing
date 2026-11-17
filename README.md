@@ -231,4 +231,4 @@ También probamos la carga del YAML del enunciado, las posiciones negativas de l
 Por último, las pruebas HTTP revisan que las rutas del servidor funcionen, que podamos cargar YAML, que el ejemplo se mantenga al recargar la página y que los nueve resultados de demostración también funcionen desde el servidor.
 
 ## Video
-
+https://youtu.be/sEJgSD5sgLY
